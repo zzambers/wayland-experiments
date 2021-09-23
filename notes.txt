@@ -1,0 +1,11 @@
+links:
+shm:
+https://wayland-book.com/surfaces/shared-memory.html
+https://jan.newmarch.name/Wayland/WhenCanIDraw/
+
+portal:
+https://github.com/GNOME/gimp/blob/master/plug-ins/screenshot/screenshot-freedesktop.c
+https://github.com/flatpak/libportal/blob/master/libportal/screenshot.c
+
+https://flatpak.github.io/xdg-desktop-portal/portal-docs.html#gdbus-org.freedesktop.portal.Screenshot
+https://github.com/flatpak/xdg-desktop-portal/blob/master/data/org.freedesktop.portal.Screenshot.xml
