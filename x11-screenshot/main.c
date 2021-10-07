@@ -95,7 +95,6 @@ void getImageData(char *rgbData, int dw, int dh, XImage *image, int x, int y, in
 int takeScreenshot(prog_data *pdata) {
     Window rootRet;
     Window parentRet;
-    Window *childrenRet;
     unsigned int nchildren, i;
     XWindowAttributes attributes = {0};
     int x, y, w, h;
@@ -108,7 +107,7 @@ int takeScreenshot(prog_data *pdata) {
     }
     getImageData(pdata->rgbData, pdata->w, pdata->h, pdata->image, 0, 0, pdata->w, pdata->h);
     */
-    if (!XQueryTree(pdata->display, pdata->rootWindow, &rootRet, &parentRet, &childrenRet, &nchildren)) {
+    if (!XQueryTree(pdata->display, pdata->rootWindow, &rootRet, &parentRet, &pdata->children, &nchildren)) {
         fprintf(stderr, "%s\n", "XQueryTree failed");
         return -1;
     }
