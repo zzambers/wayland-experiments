@@ -146,6 +146,10 @@ int saveScreenshot(prog_data *pdata) {
     int y;
     fprintf(stderr, "%s\n", "screenshot");
     pdata->fp = fopen("./Screenshot.png", "wb");
+    if (!pdata->fp) {
+        fprintf(stderr, "%s\n", "fopen failed");
+        return -1;
+    }
     pdata->png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
     if (!pdata->png_ptr) {
         fprintf(stderr, "%s\n", "png_create_write_struct failed");
